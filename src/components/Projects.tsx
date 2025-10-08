@@ -33,21 +33,21 @@ const projects: Project[] = [
         title: "RAG-Based Chatbot",
         description:
             "Built a Python chatbot using RAG architecture with OpenAI API and Qdrant to enable context-aware Q&A over indexed documents.",
-        githubUrl: "https://github.com/sandipdeshmukh77/RAG",
+        githubUrl: "https://github.com/sandip-nlz-dev/RAG",
         category: 'personal'
     },
     {
         title: "Persona-based Chatbot (React)",
         description:
             "A React app offering real-time chat with multiple AI personas. Each persona delivers responses in a distinct tone and style.",
-        githubUrl: "https://github.com/sandipdeshmukh77/persona-chatbot",
+        githubUrl: "https://github.com/sandip-nlz-dev/persona-chatbot",
         category: 'personal'
     },
     {
         title: "AI Coding Agent",
         description:
             "Python-based AI coding assistant that plans, acts, observes, and writes code for full-stack apps using Gemini API and built-in tools.",
-        githubUrl: "https://github.com/sandipdeshmukh77/coding-agent",
+        githubUrl: "https://github.com/sandip-nlz-dev/coding-agent",
         category: 'personal'
     }
 ];

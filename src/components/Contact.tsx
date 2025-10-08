@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
                 {/* Social Links */}
                 <div className="flex justify-center gap-8">
                     <a
-                        href="https://github.com/sandipdeshmukh77"
+                        href="https://github.com/sandip-nlz-dev"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-400 hover:text-blue-600 transition"
