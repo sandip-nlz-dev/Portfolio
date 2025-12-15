@@ -1,7 +1,9 @@
+// src/components/Skills.tsx
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
+// Restored Skills Data
 const skills: Record<string, string[]> = {
     "Programming": ["JavaScript", "Python"],
     "LLM Models": [
@@ -32,16 +34,10 @@ const skills: Record<string, string[]> = {
         "HTML5",
         "CSS3",
     ],
-    "Backend & API": ["Node.js", "Express.js", "REST APIs", "GraphQL"],
+    "Backend & API": ["Node.js", "Express.js", "REST APIs"],
     "Databases": ["MongoDB", "Cosmos DB"],
     "Dev Tools": ["Git", "Docker", "CI/CD"],
     "Cloud & DevOps": ["Azure", "Azure Functions", "Azure DevOps", "GitHub Actions"],
-    "Tracing & Monitoring": ["Langfuse"],
-    "Memory & Vector Stores": [
-        "Azure AI Search ",
-        "Qdrant DB",
-        "Vector Embedding Models",
-    ],
     "Infrastructure": [
         "MCP Server",
         "Neo4j Graph DB",
@@ -50,52 +46,49 @@ const skills: Record<string, string[]> = {
     ],
     "VR / 3D": ["Meta Quest (Oculus)"],
     "Knowledge Areas": [
-        "Building and managing AI agent workflows",
-        "Self-hosted tracing for AI applications",
-        "Efficient vector store implementation",
-        "Graph-based knowledge representation",
-        "Deploying and optimizing AI solutions in the cloud",
-        "Structuring vector embeddings to improve AI understanding",
+        "AI Agent Workflows",
+        "RAG Implementation",
+        "Vector Embeddings",
+        "Graph Databases",
     ],
-};
-
-const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: { delay: i * 0.1, duration: 0.5 },
-    }),
 };
 
 const Skills: React.FC = () => {
     return (
-        <section
-            id="skills"
-            className="text-white px-4 py-16 bg-[hsl(240,10%,3.9%)]"
-        >
-            <div className="mx-auto max-w-7xl text-center">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-                    Tech Stack & Skills
-                </h2>
+        <section id="skills" className="py-24 relative">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-4">
+                        Technical Skills
+                    </h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto">
+                        A curated list of technologies I use to build scalable and performant applications.
+                    </p>
+                </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
-                    {Object.entries(skills).map(([category, techList], i) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {Object.entries(skills).map(([category, techList], index) => (
                         <motion.div
                             key={category}
-                            className="bg-[hsl(240_5.9%_10%)] p-6 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-blue-500/30"
-                            variants={cardVariants}
-                            initial="hidden"
-                            animate="visible"
-                            custom={i}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            whileHover={{ scale: 1.05 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.05 }}
+                            className="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300"
                         >
-                            <h3 className="text-xl font-semibold text-blue-400 mb-4">
+                            <h3 className="text-lg font-semibold text-blue-400 mb-4 border-b border-slate-800 pb-2">
                                 {category}
                             </h3>
-                            <ul className="space-y-3 text-gray-300">
+                            <ul className="space-y-2">
                                 {techList.map((tech) => (
-                                    <li key={tech} className="flex items-center gap-2">
-                                        <CheckCircle className="w-4 h-4 text-blue-400" />
+                                    <li key={tech} className="flex items-center gap-2 text-slate-300 text-sm">
+                                        <CheckCircle size={14} className="text-slate-500" />
                                         {tech}
                                     </li>
                                 ))}

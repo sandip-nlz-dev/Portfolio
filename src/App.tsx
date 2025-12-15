@@ -1,28 +1,44 @@
-import Home from "./pages/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AboutPage from "./pages/AboutPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import ContactPage from "./pages/ContactPage";
-import BlogPage from "./pages/BlogPage";
 import Navbar from "./components/Nav";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import YouTubeSection from "./components/YouTubeSection";
+import BlogSection from "./components/BlogSection";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Layout from "./layout/Layout";
 
 function App() {
   return (
-    <BrowserRouter>
+    <div className="bg-slate-950 min-h-screen text-slate-200 selection:bg-blue-500/30">
       <Navbar />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-        </Routes>
-      </Layout>
+
+      <main>
+        <Hero />
+
+        <section id="skills">
+          <Skills />
+        </section>
+
+        <section id="projects">
+          <Projects />
+        </section>
+
+        <YouTubeSection />
+
+        <BlogSection />
+
+        <section id="education">
+          <Education />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+
       <Footer />
-    </BrowserRouter>
+    </div>
   );
 }
 
